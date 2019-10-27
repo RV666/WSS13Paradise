@@ -19,10 +19,10 @@
 
 	switch(new_objective)
 		if("convert")
-			explanation = "We must increase our influence before we can summon [SSticker.cultdat.entity_name], Convert [convert_target] crew members. Take it slowly to avoid raising suspicions."
+			explanation = "ћы должны увеличить наше влияние, прежде чем мы сможем вызвать [SSticker.cultdat.entity_name], ќбратите [convert_target] членов экипажа. ƒелайте это тихо, чтобы не вызывать подозрений."
 		if("bloodspill")
 			spilltarget = 100 + rand(0,GLOB.player_list.len * 3)
-			explanation = "We must prepare this place for [SSticker.cultdat.entity_title1]'s coming. Spill blood and gibs over [spilltarget] floor tiles."
+			explanation = "ћы должны подготовить это место для [SSticker.cultdat.entity_title1] уже рядом. ѕролить кровь [spilltarget] на пол."
 		if("sacrifice")
 			explanation = "We need to sacrifice [sacrifice_target.name], the [sacrifice_target.assigned_role], for [sacrifice_target.p_their()] blood is the key that will lead our master to this realm. You will need 3 cultists around a Sacrifice rune to perform the ritual."
 
@@ -76,16 +76,16 @@
 
 		switch(new_objective)
 			if("convert")
-				explanation = "We must increase our influence before we can summon [SSticker.cultdat.entity_name]. Convert [convert_target] crew members. Take it slowly to avoid raising suspicions."
+				explanation = "ћы должны увеличить наше влияние, прежде чем мы сможем вызвать [SSticker.cultdat.entity_name]. ќбратите [convert_target] членов экипажа. ƒелайте это тихо, чтобы не вызывать подозрений."
 			if("bloodspill")
 				spilltarget = 100 + rand(0,GLOB.player_list.len * 3)
-				explanation = "We must prepare this place for [SSticker.cultdat.entity_title1]'s coming. Spread blood and gibs over [spilltarget] of the Station's floor tiles."
+				explanation = "ћы должны подготовить это место для [SSticker.cultdat.entity_title1] уже рядом. Spread blood and gibs over [spilltarget] of the Station's floor tiles."
 			if("sacrifice")
 				explanation = "We need to sacrifice [sacrifice_target.name], the [sacrifice_target.assigned_role], for [sacrifice_target.p_their()] blood is the key that will lead our master to this realm. You will need 3 cultists around a Sacrifice rune to perform the ritual."
 
 		for(var/datum/mind/cult_mind in cult)
 			if(cult_mind)
-				to_chat(cult_mind.current, "<span class='cult'>You and your acolytes have completed your task, but this place requires yet more preparation!</span>")
+				to_chat(cult_mind.current, "<span class='cult'>¬ы и ваши помощники выполнили свою задачу, но это место требует еще большей подготовки!</span>")
 				to_chat(cult_mind.current, "<B>Objective #[current_objective]</B>: [explanation]")
 				cult_mind.memory += "<B>Objective #[current_objective]</B>: [explanation]<BR>"
 
@@ -97,10 +97,10 @@
 /datum/game_mode/cult/proc/gtfo_phase()//YOU HAD ONE JOB
 	var/explanation
 	objectives += "survive"
-	explanation = "Our knowledge must live on. Make sure at least [acolytes_needed] acolytes escape on the shuttle to spread their work on an another station."
+	explanation = "Ќаши знания должны жить. ”бедитесь, что хотя бы [acolytes_needed] культисты сбегут на шаттле, чтобы распространить свою работу на другой станции."
 	for(var/datum/mind/cult_mind in cult)
 		if(cult_mind)
-			to_chat(cult_mind.current, "<span class='cult'>You and your acolytes suddenly feel the urge to do your best, but survive!</span>")
+			to_chat(cult_mind.current, "<span class='cult'>¬ы и ваши помощники вдруг почувствуете желание сделать все возможное, но выжить!</span>")
 			to_chat(cult_mind.current, "<B>Objective Survive</B>: [explanation]")
 			cult_mind.memory += "<B>Objective Survive</B>: [explanation]<BR>"
 
@@ -111,10 +111,10 @@
 
 	if(prob(40))//split the chance of this
 		objectives += "eldergod"
-		explanation = "Summon [SSticker.cultdat.entity_name] on the Station via the use of the Tear Reality rune. The veil is weak enough in [english_list(summon_spots)] for the ritual to begin."
+		explanation = "ѕризвать [SSticker.cultdat.entity_name] на —танции с помощью руны Tear Reality. ¬уаль достаточно слаба в [english_list(summon_spots)] для начала ритуала."
 	else
 		objectives += "slaughter"
-		explanation = "Bring the Slaughter via the rune 'Bring forth the slaughter'. The veil is weak enough in [english_list(summon_spots)] for the ritual to begin."
+		explanation = "ѕринесите убой через руну 'Bring forth the slaughter'. ¬уаль слишком слаба что бы [english_list(summon_spots)] ритуал начался."
 
 	for(var/datum/mind/cult_mind in cult)
 		if(cult_mind)
@@ -135,11 +135,11 @@
 
 	switch(last_objective)
 		if("harvest")
-			explanation = "[SSticker.cultdat.entity_title1] hungers for their first meal of this never-ending day. Offer them [harvest_target] humans in sacrifice."
+			explanation = "[SSticker.cultdat.entity_title1] жаждет своей первой еды этого бесконечного дня. ѕредложить ему [harvest_target] людей в жертву."
 		if("hijack")
-			explanation = "[SSticker.cultdat.entity_name] wishes for their troops to start the assault on Centcom immediately. Hijack the escape shuttle and don't let a single non-cultist board it."
+			explanation = "[SSticker.cultdat.entity_name] желает, чтобы их войска немедленно начали штурм Centcom. «ахватите спасательный шаттл и не позволяйте ни одному некультисту садиться на него!"
 		if("massacre")
-			explanation = "[SSticker.cultdat.entity_name] wants to watch you as you massacre the remaining humans on the station (until less than [massacre_target] humans are left alive)."
+			explanation = "[SSticker.cultdat.entity_name] хочет наблюдать за тобой, пока ты убиваешь оставшихся людей на станции (—ейчас [massacre_target] людей осталось в живых!)."
 
 	for(var/datum/mind/cult_mind in cult)
 		if(cult_mind)
@@ -171,7 +171,7 @@
 			updated_memory = replacetext("[cult_mind.memory]", "[previous_target]", "[sacrifice_target]")
 			updated_memory = replacetext("[updated_memory]", "[previous_role]", "[sacrifice_target.assigned_role]")
 			cult_mind.memory = updated_memory
-			
+
 
 /datum/game_mode/cult/proc/pick_objective()
 	var/list/possible_objectives = list()

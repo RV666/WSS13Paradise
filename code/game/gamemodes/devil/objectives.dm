@@ -1,7 +1,7 @@
 /datum/objective/devil
 
 /datum/objective/devil/soulquantity
-	explanation_text = "You shouldn't see this text.  Error:DEVIL1"
+	explanation_text = "¬ы не должны видеть этот текст:ќшибка:DEVIL1"
 	target_amount = 4
 
 /datum/objective/devil/soulquantity/New()
@@ -12,7 +12,7 @@
 	//Intentionally empty
 
 /datum/objective/devil/soulquantity/update_explanation_text()
-	explanation_text = "Purchase, and retain control over at least [target_amount] souls."
+	explanation_text = " упите и сохраняйте как минимум [target_amount] душ."
 
 /datum/objective/devil/soulquantity/check_completion()
 	var/count = 0
@@ -48,7 +48,7 @@
 	update_explanation_text()
 
 /datum/objective/devil/soulquality/update_explanation_text()
-	explanation_text = "Have mortals sign at least [target_amount] contracts [contractName]."
+	explanation_text = "ѕусть смертные подпишут [target_amount] контрактов [contractName]."
 
 /datum/objective/devil/soulquality/check_completion()
 	var/count = 0
@@ -65,7 +65,7 @@
 
 /datum/objective/devil/sintouch/New()
 	target_amount = pick(4, 5)
-	explanation_text = "Ensure at least [target_amount] mortals are sintouched."
+	explanation_text = "”бедитесь по крайней мере [target_amount] смертных не тронуты."
 
 /datum/objective/devil/sintouch/check_completion()
 	return target_amount <= SSticker.mode.sintouched.len
@@ -81,9 +81,9 @@
 
 /datum/objective/devil/buy_target/update_explanation_text()
 	if(target)
-		explanation_text = "Purchase and retain the soul of [target.name], the [target.assigned_role]."
+		explanation_text = " упите и сохраняйте [target.name], [target.assigned_role]."
 	else
-		explanation_text = "Free objective."
+		explanation_text = "—вободная задача."
 
 /datum/objective/devil/buy_target/check_completion()
 	return target.soulOwner == owner
@@ -93,7 +93,7 @@
 	explanation_text = "You shouldn't see this text.  Error:DEVIL5"
 
 /datum/objective/devil/outsell/update_explanation_text()
-	explanation_text = "Purchase and retain control over more souls than [target.devilinfo.truename], known to mortals as [target.name], the [target.assigned_role]."
+	explanation_text = " упить и сохранить контроль над большим количеством душ, чем [target.devilinfo.truename], известен смертным как [target.name], [target.assigned_role]."
 
 /datum/objective/devil/outsell/check_completion()
 	var/selfcount = 0

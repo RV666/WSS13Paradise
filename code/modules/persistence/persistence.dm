@@ -2,7 +2,7 @@
 * Returns a byond list that can be passed to the "deserialize" proc
 * to bring a new instance of this atom to its original state
 *
-* If we want to store this info, we can pass it to `json_encode` or some other
+* If we want to store this info, we can pass it to `r_json_encode` or some other
 * interface that suits our fancy, to make it into an easily-handled string
 */
 /datum/proc/serialize()
@@ -60,7 +60,7 @@
 /*
 Whoops, forgot to put documentation here.
 What this does, is take a JSON string produced by running
-BYOND's native `json_encode` on a list from `serialize` above, and
+BYOND's native `r_json_encode` on a list from `serialize` above, and
 turns that string into a new instance of that object.
 
 You can also easily get an instance of this string by calling "Serialize Marked Datum"

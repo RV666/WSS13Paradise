@@ -1,7 +1,7 @@
 /datum/game_mode/devil/devil_agents
 	name = "Devil Agents"
 	config_tag = "devilagents"
-	required_players = 25
+	required_players = 20
 	required_enemies = 3
 	recommended_enemies = 8
 

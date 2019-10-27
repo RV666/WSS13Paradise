@@ -206,7 +206,7 @@
 	var/list/json[0]
 	for(var/datum/automation/A in automations)
 		json += list(A.Export())
-	return json_encode(json)
+	return r_json_encode(json)
 
 /obj/machinery/computer/general_air_control/atmos_automation/proc/ReadCode(jsonStr)
 	automations.Cut()

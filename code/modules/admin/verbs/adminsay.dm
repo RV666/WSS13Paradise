@@ -4,7 +4,7 @@
 	set hidden = 1
 	if(!check_rights(R_ADMIN))	return
 
-	msg = sanitize(copytext(msg, 1, MAX_MESSAGE_LEN))
+	msg = sanitize_russian(copytext(msg, 1, MAX_MESSAGE_LEN))
 	if(!msg)	return
 
 	log_adminsay(msg, src)
@@ -20,7 +20,7 @@
 /client/proc/get_admin_say()
 	var/msg = input(src, null, "asay \"text\"") as text|null
 	cmd_admin_say(msg)
-	
+
 /client/proc/cmd_mentor_say(msg as text)
 	set category = "Admin"
 	set name = "Msay"
@@ -29,7 +29,7 @@
 	if(!check_rights(R_ADMIN|R_MOD|R_MENTOR))
 		return
 
-	msg = sanitize(copytext(msg, 1, MAX_MESSAGE_LEN))
+	msg = sanitize_russian(copytext(msg, 1, MAX_MESSAGE_LEN))
 	log_mentorsay(msg, src)
 
 	if(!msg)
